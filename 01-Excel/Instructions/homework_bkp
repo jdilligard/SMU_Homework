@@ -1,0 +1,300 @@
+ Sub main()
+
+Worksheets("data").Activate
+'Declaring variables
+    Dim numSuccessful As Integer            'Number Successful
+    Dim numFailed As Integer                'Number Failed
+    Dim numCanceled As Integer               'Number Cancled
+    Dim numTotalProjects                    'Total Projects
+    Dim i As Integer                        'row counter
+    Dim j As Integer                        'column counter
+    Dim numPercentSuccessful As Double      'Percentage of successful projects
+    Dim numPercentFail As Double            'Percentage of failed projects
+    Dim numPercentCanceled As Double        'Percentage of canceled projects
+    Dim lastrow As Integer
+    Dim lastCol As Integer
+    Dim status As String
+    
+    Dim goal As Long
+    Dim succ50000 As Integer
+    Dim fail50000 As Integer
+    Dim can50000 As Integer
+    Dim live50000 As Integer
+    
+    Dim succ45000 As Integer
+    Dim fail45000 As Integer
+    Dim can45000 As Integer
+    Dim live45000 As Integer
+        
+    Dim succ40000 As Integer
+    Dim fail40000 As Integer
+    Dim can40000 As Integer
+    Dim live40000 As Integer
+    
+    Dim succ35000 As Integer
+    Dim fail35000 As Integer
+    Dim can35000 As Integer
+    Dim live35000 As Integer
+    
+    Dim succ30000 As Integer
+    Dim fail30000 As Integer
+    Dim can30000 As Integer
+    Dim live30000 As Integer
+     
+    Dim succ25000 As Integer
+    Dim fail25000 As Integer
+    Dim can25000 As Integer
+    Dim live25000 As Integer
+   
+    Dim succ20000 As Integer
+    Dim fail20000 As Integer
+    Dim can20000 As Integer
+    Dim live20000 As Integer
+    
+    lastrow = Range("A" & Rows.Count).End(xlUp).Row
+    lastCol = Cells(1, Columns.Count).End(xlToLeft).Column
+    
+    'MsgBox ("the last row is " + CStr(lastRow))
+    'MsgBox ("the last col is " + CStr(lastCol))
+
+'Setting everything to 0
+    numSuccessful = 0
+    numFailed = 0
+    numCanceled = 0
+    numTotalProjects = 0
+    i = 0
+    j = 0
+    numPercentSuccessful = 0
+    numPercentFail = 0
+    numPercentCanceled = 0
+    
+    goal = 1000000
+    succ50000 = 0
+    fail50000 = 0
+    can50000 = 0
+    live50000 = 0
+    
+    succ45000 = 0
+    fail45000 = 0
+    can45000 = 0
+    live45000 = 0
+    
+    succ40000 = 0
+    fail40000 = 0
+    can40000 = 0
+    live40000 = 0
+    
+    succ35000 = 0
+    fail35000 = 0
+    can35000 = 0
+    live35000 = 0
+    
+    succ30000 = 0
+    fail30000 = 0
+    can300000 = 0
+    live30000 = 0
+    
+    succ25000 = 0
+    fail25000 = 0
+    can250000 = 0
+    live25000 = 0
+    
+    succ20000 = 0
+    fail20000 = 0
+    can20000 = 0
+    live20000 = 0
+    
+    'Function that sorts the data based on the goal
+    'Sort
+
+'finding the number of successful, failed, and canceled
+For i = 2 To lastrow
+    goal = Cells(i, 4).Value
+    status = Cells(i, 6).Value
+        If goal >= 50000 Then
+            'MsgBox ("Greater than or equal to 5000")
+                If (status = "successful") Then
+                    succ50000 = succ50000 + 1
+                ElseIf (status = "canceled") Then
+                    can50000 = can50000 + 1
+                ElseIf (status = "failed") Then
+                    fail50000 = fail50000 + 1
+                ElseIf (status = "live") Then
+                    live50000 = live50000 + 1
+                Else
+                    ErrStr = "Unknown Status  Row " + "Cstr(i)"
+                    MsgBox (ErrStr)
+                End If
+                
+            
+        ElseIf goal > 45000 Then
+            'MsgBox ("Greater than 45000")
+                If (status = "successful") Then
+                    succ45000 = succ45000 + 1
+                ElseIf (status = "canceled") Then
+                    can45000 = can45000 + 1
+                ElseIf (status = "failed") Then
+                    fail45000 = fail45000 + 1
+                ElseIf (status = "live") Then
+                    live45000 = live45000 + 1
+                Else
+                    ErrStr = "Unknown Status  Row " + "Cstr(i)"
+                    MsgBox (ErrStr)
+                End If
+            
+        ElseIf goal > 40000 Then
+               'MsgBox ("Greater than 40000")
+                If (status = "successful") Then
+                    succ40000 = succ40000 + 1
+                ElseIf (status = "canceled") Then
+                    can40000 = can40000 + 1
+                ElseIf (status = "failed") Then
+                    fail40000 = fail40000 + 1
+                ElseIf (status = "live") Then
+                    live40000 = live40000 + 1
+                Else
+                    ErrStr = "Unknown Status  Row " + "Cstr(i)"
+                    MsgBox (ErrStr)
+                End If
+        
+        ElseIf goal > 35000 Then
+              ' MsgBox ("Greater than 35000")
+                If (status = "successful") Then
+                    succ35000 = succ35000 + 1
+                ElseIf (status = "canceled") Then
+                    can35000 = can35000 + 1
+                ElseIf (status = "failed") Then
+                    fail35000 = fail35000 + 1
+                ElseIf (status = "live") Then
+                    live35000 = live35000 + 1
+                Else
+                    ErrStr = "Unknown Status  Row " + "Cstr(i)"
+                    MsgBox (ErrStr)
+                End If
+        ElseIf goal > 30000 Then
+               'MsgBox ("Greater than 30000")
+                If (status = "successful") Then
+                    succ30000 = succ30000 + 1
+                ElseIf (status = "canceled") Then
+                    can30000 = can30000 + 1
+                ElseIf (status = "failed") Then
+                    fail30000 = fail30000 + 1
+                ElseIf (status = "live") Then
+                    live30000 = live35000 + 1
+                Else
+                    ErrStr = "Unknown Status  Row " + "Cstr(i)"
+                    MsgBox (ErrStr)
+                End If
+        
+        ElseIf goal > 25000 Then
+               ' MsgBox ("Greater than 25000")
+                If (status = "successful") Then
+                    succ25000 = succ25000 + 1
+                ElseIf (status = "canceled") Then
+                    can25000 = can25000 + 1
+                ElseIf (status = "failed") Then
+                    fail25000 = fail25000 + 1
+                ElseIf (status = "live") Then
+                    live25000 = live25000 + 1
+                Else
+                    ErrStr = "Unknown Status  Row " + "Cstr(i)"
+                    MsgBox (ErrStr)
+                End If
+        
+        ElseIf goal > 20000 Then
+        'MsgBox ("Greater than 20000")
+                If (status = "successful") Then
+                    succ20000 = succ20000 + 1
+                ElseIf (status = "canceled") Then
+                    can20000 = can20000 + 1
+                ElseIf (status = "failed") Then
+                    fail20000 = fail20000 + 1
+                ElseIf (status = "live") Then
+                    live20000 = live20000 + 1
+                Else
+                    ErrStr = "Unknown Status  Row " + "Cstr(i)"
+                    MsgBox (ErrStr)
+                End If
+        ElseIf goal > 15000 Then
+       'MsgBox ("Greater than 15000")
+                If (status = "successful") Then
+                    succ20000 = succ20000 + 1
+                ElseIf (status = "canceled") Then
+                    can20000 = can20000 + 1
+                ElseIf (status = "failed") Then
+                    fail20000 = fail20000 + 1
+                ElseIf (status = "live") Then
+                    live20000 = live20000 + 1
+                Else
+                    ErrStr = "Unknown Status  Row " + "Cstr(i)"
+                    MsgBox (ErrStr)
+                End If
+        ElseIf goal > 10000 Then
+        'MsgBox ("Greater than 10000")
+        
+        ElseIf goal > 5000 Then
+       ' MsgBox ("Greater than 5000")
+        
+        
+        ElseIf goal > 1000 Then
+       'MsgBox ("Greater than 1000")
+        
+        Else
+             'MsgBox ("Less than 1000")
+             
+        End If
+
+Next i
+
+
+    
+
+
+'Adding up the totals
+
+
+
+'Adding up the percentages
+
+
+'Sending everything to bonus worksheet
+Worksheets("bonus").Activate
+Worksheets("bonus").Select
+
+
+Worksheets("bonus").Range("B13").Value = succ50000
+Worksheets("bonus").Range("C13").Value = fail50000
+Worksheets("bonus").Range("D13").Value = can50000
+
+Worksheets("bonus").Range("B12").Value = succ45000
+Worksheets("bonus").Range("C12").Value = fail45000
+Worksheets("bonus").Range("D12").Value = can45000
+
+Worksheets("bonus").Range("B11").Value = succ40000
+Worksheets("bonus").Range("C11").Value = fail40000
+Worksheets("bonus").Range("D11").Value = can40000
+
+Worksheets("bonus").Range("B10").Value = succ35000
+Worksheets("bonus").Range("C10").Value = fail35000
+Worksheets("bonus").Range("D10").Value = can35000
+
+Worksheets("bonus").Range("B9").Value = succ30000
+Worksheets("bonus").Range("C9").Value = fail30000
+Worksheets("bonus").Range("D9").Value = can30000
+
+Worksheets("bonus").Range("B8").Value = succ25000
+Worksheets("bonus").Range("C8").Value = fail25000
+Worksheets("bonus").Range("D8").Value = can25000
+
+Worksheets("bonus").Range("B7").Value = succ20000
+Worksheets("bonus").Range("C7").Value = fail20000
+Worksheets("bonus").Range("D7").Value = can20000
+
+Worksheets("bonus").Range("B6").Value = succ15000
+Worksheets("bonus").Range("C6").Value = fail15000
+Worksheets("bonus").Range("D6").Value = can15000
+
+End Sub
+
+
+

@@ -2,6 +2,7 @@ Sub StockScan()
 Dim i As LongLong
 Dim x As LongLong
 Dim k As LongLong
+Dim iData As LongLong
 
 Dim datarow As LongLong
 
@@ -15,6 +16,20 @@ Dim totVol As Double
 
 Dim thisTik As String
 Dim nextTik As String
+
+Dim lastrowData As Long
+
+Dim greatYP As Double
+Dim greatYPIndext As LongLong
+Dim greatYPTik As String
+
+Dim leastYP As Double
+Dim leastYPIndex As LongLong
+Dim leastYPTik As String
+
+Dim greatVol As Double
+Dim greatVolIndex As LongLong
+Dim greatVolTix As String
 
 
     MsgBox ("Welcome To The Stock Scanner...")
@@ -108,7 +123,149 @@ num_sheets = ThisWorkbook.Worksheets.Count 'Tells me how many sheets in the work
                 Next i
                 
         '*******************************************************************************************
+                    lastrowData = .Cells(Rows.Count, 10).End(xlUp).Row
+            
+                 greatYP = .Cells(2, 11).Value
+                 thisYP = .Cells(2, 11).Value
+                 greatYPIndex = 2
+                 greatYPTik = .Cells(2, 10).Value
+                 
+                 leastYP = .Cells(2, 11).Value
+                 leastYPIndex = 2
+                 leastYPTik = .Cells(2, 10).Value
+                 
+                 greatVol = .Cells(2, 13).Value
+                 greatVolIndex = 2
+                 greatVolTik = .Cells(2, 10).Value
+                 thisVol = .Cells(2, 13).Value
+                 
+            
+                 
+                For iData = 2 To lastrowData
+                    
+                    thisYP = .Cells(iData, 12).Value
+                    thisVol = .Cells(iData, 13).Value
+                    If thisYP > greatYP Then
+                        greatYP = thisYP
+                        greatYPIndex = iData
+                        greatYPTik = .Cells(iData, 10).Value
+                    End If
+                    
+                    
+                    If thisYP < leastYP Then
+                        leastYP = thisYP
+                        leastYPIndex = iData
+                        leastYPTik = .Cells(iData, 10).Value
+                    End If
+                     
+                    If thisVol > greatVol Then
+                        greatVol = thisVol
+                        greatVolIndex = iData
+                        greatVolTik = .Cells(iData, 10).Value
+                    End If
+                    
+                    
+                Next iData
+            
+            
+            .Range("P1").Value = "Ticker"
+            .Range("Q1").Value = "Value"
+            .Range("O2").Value = "Greatest % Increase"
+            .Range("O3").Value = "Greatest % Decrease"
+            .Range("O4").Value = "Greatest Total Volume"
+            
+            .Range("P2").Value = greatYPTik
+            .Range("Q2").Value = greatYP
+            .Range("Q2").NumberFormat = "0.00%"
+            
+            .Range("P3").Value = leastYPTik
+            .Range("Q3").Value = leastYP
+            .Range("Q3").NumberFormat = "0.00%"
+            
+            .Range("P4").Value = greatVolTik
+            .Range("Q4").Value = greatVol
+
+
         End With
     Next k
 End Sub
 
+Sub FindMaxMin()
+Dim lastrowData As Long
+
+Dim greatYP As Double
+Dim greatYPIndext As Long
+Dim greatYPTik As String
+
+Dim leastYP As Double
+Dim leastYPIndex As Long
+Dim leastYPTik As String
+
+Dim greatVol As Double
+Dim greatVolIndex As Long
+Dim greatVolTix As String
+
+lastrowData = .Cells(Rows.Count, 10).End(xlUp).Row
+
+     greatYP = .Cells(2, 11).Value
+     thisYP = .Cells(2, 11).Value
+     greatYPIndex = 2
+     greatYPTik = .Cells(2, 10).Value
+     
+     leastYP = .Cells(2, 11).Value
+     leastYPIndex = 2
+     leastYPTik = .Cells(2, 10).Value
+     
+     greatVol = .Cells(2, 13).Value
+     greatVolIndex = 2
+     greatVolTik = .Cells(2, 10).Value
+     thisVol = .Cells(2, 13).Value
+     
+
+     
+    For i = 2 To lastrow
+        
+        thisYP = .Cells(i, 12).Value
+        thisVol = .Cells(i, 13).Value
+        If thisYP > greatYP Then
+            greatYP = thisYP
+            greatYPIndex = i
+            greatYPTik = .Cells(i, 10).Value
+        End If
+        
+        
+        If thisYP < leastYP Then
+            leastYP = thisYP
+            leastYPIndex = i
+            leastYPTik = .Cells(i, 10).Value
+        End If
+         
+        If thisVol > greatVol Then
+            greatVol = thisVol
+            greatVolIndex = i
+            greatVolTik = .Cells(i, 10).Value
+        End If
+        
+        
+    Next i
+
+
+.Range("P1").Value = "Ticker"
+.Range("Q1").Value = "Value"
+.Range("O2").Value = "Greatest % Increase"
+.Range("O3").Value = "Greatest % Decrease"
+.Range("O4").Value = "Greatest Total Volume"
+
+.Range("P2").Value = greatYPTik
+.Range("Q2").Value = greatYP
+.Range("Q2").NumberFormat = "0.00%"
+
+.Range("P3").Value = leastYPTik
+.Range("Q3").Value = leastYP
+.Range("Q3").NumberFormat = "0.00%"
+
+.Range("P4").Value = greatVolTik
+.Range("Q4").Value = greatVol
+
+
+End Sub

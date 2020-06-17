@@ -16,7 +16,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
             <img src="Resources\air.png" height="60" width="60">
         </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,11 +24,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item active dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Visualizations
               </a>
@@ -57,7 +57,7 @@
     <div class="container-fluid">
         <div class='row'>
 
-            <div class='col-md-8'>
+            <div class='col-md-6'>
 
                 <div class="card border-primary mb-3">
                     <div class="card-header card-header_overide">Humidity vs Latitude</div>
@@ -73,10 +73,58 @@
 
             </div>
 
+            <div class='col-md-6'>
+                <div class="card border-primary mb-6 ">
+                    <div class="card-header card-header_overide ">Visualizations</div>
+                    <!-- Nested Bootstrap Grid for additional layout control -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Select a graph to explore further...</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <a href="viz1.html">
+                                    <img class="image_inline image_clickable" src="assests\Fig1.png">
+                                    <p class="subtitle">Figure 1</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <a href="viz2.html">
+                                    <img class="image_inline image_clickable" src="assests\Fig2.png">
+                                    <p class="subtitle">Figure 2</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <a href="viz3.html">
+                                    <img class="image_inline image_clickable" src="assests\Fig3.png">
+
+                                    <p class="subtitle">Figure 3</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <a href="viz4.html">
+                                    <img class="image_inline image_clickable" src="assests\Fig4.png">
+                                    <p class="subtitle">Figure 4</p>
+                            </div>
+                        </div>
+                    </div>
 
 
 
+                </div>
 
+
+            </div>
+
+
+            <footer class="footer">
+                <div class="alert alert-light">
+                    <span>Made by: Dilligard. All Rights Reserved.</span>
+                </div>
+            </footer>
+        </div>
+    </div>
 
 
 </body>

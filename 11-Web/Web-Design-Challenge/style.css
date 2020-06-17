@@ -1,12 +1,13 @@
-,
-<!--.card-header_overide {
+.card-header_overide {
     font-weight: bold;
     font-size: 40px;
     background-color: aliceblue;
 }
 
-.card-header_overide {
-    font-weight: bold;
-    font-size: 40px;
-    background-color: aliceblue;
+.image_clickable {
+    cursor: pointer;
+}
+
+.subtitle {
+    text-align: center;
 }

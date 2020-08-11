@@ -49,12 +49,12 @@ function getMap() {
         legend.onAdd = function() {
             var div = L.DomUtil.create("div", "info legend");
             div.innerHTML += "<h4>Magnitudes</h4>";
-            div.innerHTML += '<i style="background: #477AC2"></i><span>0-1</span><br>';
-            div.innerHTML += '<i style="background: #448D40"></i><span>1-2</span><br>';
-            div.innerHTML += '<i style="background: #E6E696"></i><span>2-3</span><br>';
-            div.innerHTML += '<i style="background: #E8E6E0"></i><span>3-4</span><br>';
-            div.innerHTML += '<i style="background: #FFFFFF"></i><span>4-5</span><br>';
-            div.innerHTML += '<i style="background: #FFFFFF"></i><span>5+</span><br>';
+            div.innerHTML += '<i style="background: #0000FF"></i><span>0-1</span><br>';
+            div.innerHTML += '<i style="background: #00FF00"></i><span>1-2</span><br>';
+            div.innerHTML += '<i style="background: #FFFF00"></i><span>2-3</span><br>';
+            div.innerHTML += '<i style="background: #FF7F00"></i><span>3-4</span><br>';
+            div.innerHTML += '<i style="background: #FF0000"></i><span>4-5</span><br>';
+            div.innerHTML += '<i style="background: #9000E7"></i><span>5+</span><br>';
 
             return div;
         }
@@ -80,17 +80,17 @@ function addMyLed() {
     legend.onAdd = function() {
         var div = L.DomUtil.create("div", "info legend");
         div.innerHTML += "<h4>Magnitudes</h4>";
-        div.innerHTML += '<i style="background: #477AC2"></i><span>0-1</span><br>';
-        div.innerHTML += '<i style="background: #448D40"></i><span>1-2</span><br>';
-        div.innerHTML += '<i style="background: #E6E696"></i><span>2-3</span><br>';
-        div.innerHTML += '<i style="background: #E8E6E0"></i><span>3-4</span><br>';
-        div.innerHTML += '<i style="background: #FFFFFF"></i><span>4-5</span><br>';
-        div.innerHTML += '<i style="background: #FFFFFF"></i><span>5+</span><br>';
+        div.innerHTML += '<i style="background: blue"></i><span>0-1</span><br>';
+        div.innerHTML += '<i style="background: green"></i><span>1-2</span><br>';
+        div.innerHTML += '<i style="background: 9000E7"></i><span>2-3</span><br>';
+        div.innerHTML += '<i style="background: orange"></i><span>3-4</span><br>';
+        div.innerHTML += '<i style="background: red"></i><span>4-5</span><br>';
+        div.innerHTML += '<i style="background: 9000E7"></i><span>5+</span><br>';
 
         return div;
     }
 
-    legend.addTo(map);
+    legend.addTo(mymap);
 }
 
 function getColor(mag) {

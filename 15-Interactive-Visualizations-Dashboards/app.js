@@ -135,7 +135,6 @@ function fillMetaData(id) {
         dataType: 'json',
         contentType: 'application/json;charset=UTF-8',
         success: function(data) {
-            console.log(data)
             let metadata = data["metadata"].filter(x => x.id == id)[0];
             wf = metadata["wfreq"];
             samples = data["samples"].filter(x => x.id == id)[0];

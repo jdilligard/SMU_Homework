@@ -6,7 +6,6 @@ $(document).ready(function() {
 
 
 function doTheBar(x, y, h) {
-    console.log('In do the bar');
 
     var trace1 = {
         y: y,
@@ -107,11 +106,9 @@ function doTheBubble(x, y, h) {
 }
 
 function fillDropdown() {
-
-    console.log('In FillDropdown')
     $.ajax({
         type: 'GET',
-        url: "/samples.json",
+        url: 'https://storage.googleapis.com/bellybutton_biodiversity/belly_button_biodiversity/samples.json',
         dataType: 'json',
         contentType: 'application/json;charset=UTF-8',
         success: function(data) {
@@ -132,10 +129,9 @@ function fillDropdown() {
 }
 
 function fillMetaData(id) {
-    console.log('In fillMetaData')
     $.ajax({
         type: 'GET',
-        url: "/samples.json",
+        url: 'https://storage.googleapis.com/bellybutton_biodiversity/belly_button_biodiversity/samples.json',
         dataType: 'json',
         contentType: 'application/json;charset=UTF-8',
         success: function(data) {
